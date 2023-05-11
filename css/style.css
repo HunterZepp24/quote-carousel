@@ -22,7 +22,14 @@ main {
   font-family: 'Abril Fatface', cursive;
   font-size: 5vmin;
   text-align: center;
+  border-radius: 20px;
+  width: 600px;
   
   /* Add contrast to text */
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 100);
+}
+
+.carImage {
+  width: 480px;
+  border-radius: 20px;
 }
