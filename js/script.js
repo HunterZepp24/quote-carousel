@@ -38,7 +38,7 @@ const emoji = document.querySelector('p');
 const bgImage = document.querySelector('body');
 
 // Check-Check: change text
-car.innerHTML = "Iconic Cars of:";
+car.innerHTML = "Cars of Fast and Furious";
 // Check-Check: change emoji text
 emoji.innerHTML = '<img class="carImage" src="assets/main.svg" alt="The Fast and the Furious">';
 // Check-Check: background image
