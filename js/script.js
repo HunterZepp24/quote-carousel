@@ -2,47 +2,56 @@
 const data = [
   {
     car: `Brian's 1995 Mitsubishi Eclipse`,
-    emoji: '<img class="carImage" src="assets/eclipse.jpg" alt="1995 Mitsubishi Eclipse">',
-    image: `url(assets/eclipseBG.jpg)`
+    carImage: `assets/eclipse.jpg`,
+    bgImage: `url(assets/eclipseBG.jpg)`,
+    audio: `audio/eclipse.mp3`
   },
   {
     car: `Brian's 1994 Toyota Supra`,
-    emoji: '<img class="carImage" src="assets/supra.jpg" alt="1994 Toyota Supra">',
-    image: `url(assets/supraBG.jpg)`
+    carImage: `assets/supra.jpg`,
+    bgImage: `url(assets/supraBG.jpg)`,
+    audio: `audio/supra.mp3`
   },
   {
     car: `Dom's 1970 Dodge Charger R/T`,
-    emoji: '<img class="carImage" src="assets/charger.jpg" alt="1970 Dodge Charger R/T">',
-    image: `url(assets/chargerBG.jpg)`
+    carImage: `assets/charger.jpg`,
+    bgImage: `url(assets/chargerBG.jpg)`,
+    audio: `audio/charger.mp3`
   },
   {
     car: `Brian's 1999 Nissan Skyline GT-R R34`,
-    emoji: '<img class="carImage" src="assets/skyline.jpg" alt="1999 Nissan Skyline GT-R R34">',
-    image: `url(assets/skylineBG.jpg)`
+    carImage: `assets/skyline.jpg`,
+    bgImage: `url(assets/skylineBG.jpg)`,
+    audio: `audio/skyline.mp3`
   },
   {
     car: `Han's 1997 Mazda RX-7 VeilSide Fortune`,
-    emoji: '<img class="carImage" src="assets/rx7.jpg" alt="1997 Mazda RX-7 VeilSide Fortune">',
-    image: `url(assets/rx7BG.jpg)`
+    carImage: `assets/rx7.jpg`,
+    bgImage: `url(assets/rx7BG.jpg)`,
+    audio: `audio/rx7.mp3`
   }
 ];
 
 /*
-Quote and Emoji
+Car Name and Image
 */
-// blockquote
+// name
 const car = document.querySelector('blockquote');
-// emoji
-const emoji = document.querySelector('p');
+// image
+const carImage = document.querySelector('img.carImage');
 // background
 const bgImage = document.querySelector('body');
+// audio
+const carAudio = document.querySelector('audio');
 
 // Check-Check: change text
 car.innerHTML = "Cars of Fast and Furious";
-// Check-Check: change emoji text
-emoji.innerHTML = '<img class="carImage" src="assets/main.svg" alt="The Fast and the Furious">';
+// Check-Check: change image
+carImage.src = `assets/main.svg`;
 // Check-Check: background image
 bgImage.style.backgroundImage = 'url(assets/mainBG.jpg)';
+// Check-Check: audio
+carAudio.src = `audio/main.mp3`;
 
 /*
  * Navigate to Items with Event Listeners
@@ -70,9 +79,9 @@ nextButton.addEventListener("click", () => {
 
   // display data based on array index
   car.innerHTML = data[itemNumber].car;
-  emoji.innerHTML = data[itemNumber].emoji;
-  bgImage.style.backgroundImage = data[itemNumber].image;
-
+  carImage.src = data[itemNumber].carImage;
+  bgImage.style.backgroundImage = data[itemNumber].bgImage;
+  carAudio.src = data[itemNumber].audio;
 });
 
 // listen for clicks on previous button
@@ -88,8 +97,9 @@ prevButton.addEventListener("click", () => {
 
   // display data based on array index
   car.innerHTML = data[itemNumber].car;
-  emoji.innerHTML = data[itemNumber].emoji;
-  bgImage.style.backgroundImage = data[itemNumber].image;
+  carImage.src = data[itemNumber].carImage;
+  bgImage.style.backgroundImage = data[itemNumber].bgImage;
+  carAudio.src = data[itemNumber].audio;
 });
 
 // listen for clicks on random button
@@ -100,8 +110,9 @@ randButton.addEventListener('click', () => {
 
   // display data based random number
   car.innerHTML = data[randomNumber].car;
-  emoji.innerHTML = data[randomNumber].emoji;
-  bgImage.style.backgroundImage = data[randomNumber].image;
+  carImage.src = data[randomNumber].carImage;
+  bgImage.style.backgroundImage = data[randomNumber].bgImage;
+  carAudio.src = data[randomNumber].audio;
 
 });
 
@@ -125,8 +136,9 @@ document.addEventListener('keyup', (event) => {
 
     // display data based on array index
     car.innerHTML = data[itemNumber].car;
-    emoji.innerHTML = data[itemNumber].emoji;
-    bgImage.style.backgroundImage = data[itemNumber].image;
+    carImage.src = data[itemNumber].carImage;
+    bgImage.style.backgroundImage = data[itemNumber].bgImage;
+    carAudio.src = data[itemNumber].audio;
 
   }
 
@@ -144,8 +156,9 @@ document.addEventListener('keyup', (event) => {
 
     // display data based on array index
     car.innerHTML = data[itemNumber].car;
-    emoji.innerHTML = data[itemNumber].emoji;
-    bgImage.style.backgroundImage = data[itemNumber].image;
+    carImage.src = data[itemNumber].carImage;
+    bgImage.style.backgroundImage = data[itemNumber].bgImage;
+    carAudio.src = data[itemNumber].audio;
   }
 
   // Random Spacebar
@@ -156,9 +169,15 @@ document.addEventListener('keyup', (event) => {
 
     // display data based random number
     car.innerHTML = data[randomNumber].car;
-    emoji.innerHTML = data[randomNumber].emoji;
-    bgImage.style.backgroundImage = data[randomNumber].image;
+    carImage.src = data[randomNumber].carImage;
+    bgImage.style.backgroundImage = data[randomNumber].bgImage;
+    carAudio.src = data[randomNumber].audio;
 
   }
 
+});
+
+
+carImage.addEventListener("click", () => {
+  carAudio.play();
 });
