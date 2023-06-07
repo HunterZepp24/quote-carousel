@@ -27,7 +27,7 @@ main {
   width: 720px;
   
   /* Add contrast to text */
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(10, 10, 10,.75);
 }
 
 .carImage {
